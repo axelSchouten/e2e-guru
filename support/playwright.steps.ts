@@ -4,8 +4,13 @@ import { config } from 'dotenv';
 config({ path: './.env' });
 
 export default defineConfig({
-  use: {
-    headless: false,
-    viewport: { width: 1280, height: 720 },
-  },
+    testDir: './e2e/**/*',
+    use: {
+        headless: false,
+        viewport: { width: 1300, height: 860 },
+    },
+    reporter: [
+        ['json', { outputFile: 'results.json' }],
+        ['html', { open: "always", port: 7777 }]
+    ]
 });

@@ -25,5 +25,5 @@ The Structure
 ### Launch Test
 
 ```shell
-
+make open-tags ARGS="your tag here...""
 ```

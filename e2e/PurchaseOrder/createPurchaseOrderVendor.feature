@@ -9,5 +9,5 @@ Feature: Create Purchase Order Vendor
     @povendor
     Scenario: Generate Vendor Document
         Given the user open a found "Rt_Vendor" Purchase Order from the list and is redirected to the page layout
-        When the user click on "Purchase_Order__c.Generate_PO_Document" quick action to be able to open the pop-up
+        Then the user click on "Purchase_Order__c.Generate_PO_Document" quick action to be able to open the pop-up
 

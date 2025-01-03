@@ -39,12 +39,6 @@ export async function buildSQLQuery (
             return `(${conditionsStr})`;
         }
     }
-    console.log(`
-        SELECT ${fields.join()}
-        FROM ${objectName}
-        ${ clauses && `WHERE ${clauses.map(processClause).join(' AND ')}` }
-        LIMIT ${limit}
-    `);
 
     return `
         SELECT ${fields.join()}
