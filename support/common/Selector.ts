@@ -4,7 +4,7 @@ const salesForceSelectors = {
     "listViewDropDownButton": "//button[@title='Select a List View: {{name}}']",
     "listViewSearchList": "//input[@placeholder='Search lists...']",
     "listViewSearchList.Result": "//li[@data-aura-class='forceVirtualAutocompleteMenuOption']/a",
-    "listViewInput.Search": "//force-list-view-manager-search-bar/div/lightning-input/lightning-primitive-input-simple//input",
+    "listViewInput.Search": "//force-list-view-manager-search-bar//input[@name='{{objectApiName}}-search-input']",
     "listViewTable.ResultLink": "//a[@data-recordid='{{id}}']",
     "quickActionButton": "//button[@name='{{quickActionName}}']"
     // if you want to get more than one attribute on the element 

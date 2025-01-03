@@ -15,6 +15,7 @@ BeforeStep( async () => {
 Given(
     "logged in as a {string}",
     async (profile: string) => {
+        await Salesforce.actions.closeAllTabs();
         await Salesforce.loggedInAs(profile);
 });
 
@@ -22,6 +23,8 @@ Given(
     "I select the {string} application", 
     async (application: string) => {
         await Salesforce.actions.appLauncher(application);
+        await Salesforce.wait();
+        await Salesforce.actions.closeAllTabs();
 });
 
 Given(
@@ -37,7 +40,8 @@ Given(
     async (recordType:string) => {
         const clauses: [{}] = [{ field: "Recordtype.DeveloperName", value: recordType, operand: 'qto' }];
         const { Id, Name }: any = await Salesforce.getRecords({ objectname: 'Purchase_Order__c', fields: ['id', 'Name'], clauses });
-        await Salesforce.actions.searchAndPickRecord('listViewInput.Search', Name, { id:Id });
+        console.log(Id, Name);
+        await Salesforce.actions.selectRecordFromListViewResult('listViewInput.Search', 'Purchase_Order__c' , Name, { id:Id });
     }
 );
 

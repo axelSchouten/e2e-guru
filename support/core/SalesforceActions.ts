@@ -1,3 +1,4 @@
+import { expect } from "playwright/test";
 import { ISFActions, ISalesforce } from "../utils/interfaces"
 
 class SFActions implements ISFActions {
@@ -34,16 +35,27 @@ class SFActions implements ISFActions {
         }
     }
 
-    public async searchAndPickRecord (
+    public async selectRecordFromListViewResult (
         inputSelector: string,
+        objectApiName: string,
         value: string,
         options: any
     ) {
-        const input = await this.sf.get('sf', inputSelector);
+        const input = await this.sf.get('sf', inputSelector, { objectApiName });
         input?.fill(value);
         input?.press('Enter');
         const recordId = await this.sf.get('sf', 'listViewTable.ResultLink', options);
         return recordId?.click();
+    }
+
+    public async closeAllTabs() {
+        const body = await this.sf.page?.locator('body');
+        body?.focus();
+        await this.sf.page?.keyboard.press('Shift+Backquote+W');
+        const buttonClose = await this.sf.page?.getByRole('button', { name: 'Close All' });
+        await this.sf.page?.waitForTimeout(1000);
+        if (await buttonClose?.isVisible()) await buttonClose?.click();
+        await this.sf.page?.waitForTimeout(1000);
     }
 
 

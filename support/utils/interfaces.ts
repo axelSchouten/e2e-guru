@@ -14,7 +14,8 @@ interface ISFActions {
     navigateTo: (record:string) => void
     appLauncher: (appName:string) => void
     selectListViewName: (objectName:string, listViewName:string) => void
-    searchAndPickRecord: (input:string, value:string, options: any) => void
+    selectRecordFromListViewResult: (input:string, objectApiName:string, value:string, options: any) => void
+    closeAllTabs: () => void
 }
 
 interface ISalesforce extends IBrowserManager {

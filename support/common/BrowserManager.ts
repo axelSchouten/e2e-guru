@@ -55,9 +55,6 @@ class BrowserManager implements IBrowserManager {
     public async wait (timer: number = 2000) {
         return await this.page?.waitForTimeout(timer);
     }
-
-    public closeAllTabs () {}
-
 }
 
 

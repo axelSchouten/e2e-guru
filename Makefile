@@ -3,7 +3,7 @@ AUTHFILE = .authfile.json
 SF_USER  = automate@integ
 
 open-tag:
-	@$(CUCUMBER) --name "$(ARGS)"
+	@$(CUCUMBER) --tags "$(ARGS)"
 
 org-login: $(AUTHFILE)
 	@sf org login sfdx-url --sfdx-url-file $(AUTHFILE) --alias $(SF_USER) --set-default

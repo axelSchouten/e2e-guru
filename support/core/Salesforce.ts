@@ -20,7 +20,7 @@ class Salesforce extends BrowserManager implements ISalesforce {
         const userId = await this.runQuery(`SELECT ID FROM User WHERE Profile.Name ='${profileName}' AND isActive = true LIMIT 1`);
         const orgId = await this.runQuery(`SELECT ID FROM Organization`);
         if (userId && orgId) {
-            return this.visit(`${process.env.SALESFORCE_SETUP_REDIRECT}/servlet/servlet.su?oid=${orgId[0].Id}&suorgadminid=${userId[0].Id}&targetURL=/home/home.jsp?&isdtp=1`);
+            this.visit(`${process.env.SALESFORCE_SETUP_REDIRECT}/servlet/servlet.su?oid=${orgId[0].Id}&suorgadminid=${userId[0].Id}&targetURL=/home/home.jsp?&isdtp=1`);
         }
     }
 
