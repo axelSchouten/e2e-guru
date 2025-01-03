@@ -25,5 +25,6 @@ The Structure
 ### Launch Test
 
 ```shell
-make open-tags ARGS="your tag here...""
+make open-tags "your tag here..." 
+make open-tags "@povendor"
 ```
