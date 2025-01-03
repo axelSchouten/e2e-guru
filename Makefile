@@ -20,4 +20,4 @@ org-login: $(AUTHFILE)
 
 init-sf:
 	@echo "Init SF assets"
-	@sf org display --target-org $(SF_USER) --verbose --json 2>&- > $(AUTHFILE); \
+	@sf org display --target-org $(SF_USER) --verbose --json 2>&- > $(AUTHFILE)

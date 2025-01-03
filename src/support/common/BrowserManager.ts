@@ -12,7 +12,7 @@ class BrowserManager implements IBrowserManager {
 
     public selectors: any = null;
 
-    constructor ({sf ,installer}:any) {
+    constructor ({sf , installer}:any) {
         this.selectors = { sf, installer };
     }
 
@@ -27,9 +27,7 @@ class BrowserManager implements IBrowserManager {
     }
 
     public async closeBrowser () {
-        if (this.browser) {
-            await this.browser.close();
-        }
+        if (this.browser) await this.browser.close();
     };
 
     public getPage ():Page {
