@@ -4,6 +4,10 @@ SF_USER  = automate@integ
 REPORT_HTML = ./report.ts
 REPORT_JSON_RESULT = results
 
+%:
+	@:
+ARGS = `arg="$(filter-out $@,$(MAKECMDGOALS))" && echo $${arg:-${1}}`
+
 open-tag:
 	@$(CUCUMBER) --tags "$(ARGS)"
 

@@ -4,7 +4,7 @@ import { config } from 'dotenv';
 config({ path: './.env' });
 
 export default defineConfig({
-    testDir: './e2e/**/*',
+    testDir: '.src/e2e/**/*',
     use: {
         headless: false,
         viewport: { width: 1300, height: 860 },

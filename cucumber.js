@@ -1,8 +1,8 @@
 module.exports = {
     default: {
         requireModule: ['ts-node/register'],
-        require: ['./e2e/**/*.ts', './support/*.ts'],
+        require: ['./src/e2e/**/*.ts', './src/support/*.ts'],
         format: ['progress'],
-        paths: ['./e2e/**/*.feature'],
+        paths: ['./src/e2e/**/*.feature'],
     }
 };
