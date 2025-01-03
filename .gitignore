@@ -1,0 +1,10 @@
+**/.env
+**/.DS_Store
+.authFile.json
+.loggedIn.sf
+cucumber-messages.ndjson
+node_modules
+package-lock.json
+README.pdf
+public/*
+.history
